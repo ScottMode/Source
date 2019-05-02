@@ -6238,6 +6238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6264769323993078858, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6264769323989452954, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6313,15 +6318,15 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6264769323993078858, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6264769325780497594, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6264769324562023590, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 364cfad53b6091343aef49241a1a0e74, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d8cd74c0b2cbbe44bd7baf10bd0dc38, type: 3}

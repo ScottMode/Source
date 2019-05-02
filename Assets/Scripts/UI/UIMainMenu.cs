@@ -9,6 +9,13 @@ public class UIMainMenu : UIScreen
     
     #endregion
 
+
+    void Start()
+    {
+        //Play starting music
+        SoundManager.Instance.PlayMusic("EndOfTheBeginning", true);
+    }
+
     /// <summary>
     /// Start game was clicked
     /// </summary>

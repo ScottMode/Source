@@ -29,6 +29,9 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void Init()
     {
+        //Play music
+        SoundManager.Instance.PlayMusic("Awakening", true);
+
         //Set objects to active
         gameWorld.SetActive(true);
 
