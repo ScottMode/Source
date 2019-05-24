@@ -9,6 +9,9 @@ using System.Collections;
 public class GameManager : Singleton<GameManager>
 {
     #region Fields
+    //Dev
+    public bool isDebug;
+
     //World
     public GameObject gameWorld;
 
@@ -48,11 +51,19 @@ public class GameManager : Singleton<GameManager>
         //Alter position so as to not run through walls
         //This currently makes a triangle
         Vector3 dir =  position - player.transform.position;
-        Vector3 newPoint = player.transform.position + (dir * 0.95f);
+        Vector3 newPoint = player.transform.position + (dir * 0.92f);
         newPoint = new Vector3(newPoint.x, 1.6f, newPoint.z);
 
         //Begin teleport
         player.isMoving = true;
         player.targetPosition = newPoint; //newPoint
+
+        //Animatons and particles
+        player.hands.PlayNavigate();
+        player.navParticles.SetActive(true);
+
+        //Sound
+        int rand = UnityEngine.Random.Range(1, 3);
+        SoundManager.Instance.PlayHandEffect("navHand" + rand);
     }
 }

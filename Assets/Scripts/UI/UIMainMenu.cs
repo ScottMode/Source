@@ -13,7 +13,7 @@ public class UIMainMenu : UIScreen
     void Start()
     {
         //Play starting music
-        SoundManager.Instance.PlayMusic("EndOfTheBeginning", true);
+        SoundManager.Instance.PlayMusic("Menu", true);
     }
 
     /// <summary>

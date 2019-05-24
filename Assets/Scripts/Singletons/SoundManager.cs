@@ -12,6 +12,8 @@ public class SoundManager : Singleton<SoundManager>
 	
 	//Sources
 	public AudioSource musicSource;
+    public AudioSource surroundSource;
+    public AudioSource handSource;
 	public AudioSource effectSource;
 	public AudioSource UIAudioSource;
 	public GameObject effectContainer;
@@ -118,8 +120,74 @@ public class SoundManager : Singleton<SoundManager>
 		
 		return false;
 	}
-	
-	public void MuteSoundEffects(bool mute)
+
+    /// <summary>
+	/// Plays sound effect by name.
+	/// </summary>
+	/// <returns><c>true</c>, if sound effect exists and was played, <c>false</c> otherwise.</returns>
+	/// <param name="soundName">Sound name.</param>
+	public bool PlaySurroundEffect(string soundName)
+    {
+        if (soundEffects.ContainsKey(soundName))
+        {
+            surroundSource.PlayOneShot(soundEffects[soundName]);
+
+            return true;
+        }
+        else
+        {
+            Debug.Log("soundEffects dictionary does not have key: " + soundName);
+        }
+
+        return false;
+    }
+    public void StopSurroundEffects()
+    {
+        try
+        {
+            surroundSource.Stop();
+        }
+        catch (UnassignedReferenceException e)
+        {
+            Debug.LogError("Missing reference to a warning timer.\n" + e.Message);
+        }
+    }
+
+    /// <summary>
+	/// Plays sound effect by name.
+	/// </summary>
+	/// <returns><c>true</c>, if sound effect exists and was played, <c>false</c> otherwise.</returns>
+	/// <param name="soundName">Sound name.</param>
+	public bool PlayHandEffect(string soundName)
+    {
+        if (soundEffects.ContainsKey(soundName))
+        {
+            handSource.PlayOneShot(soundEffects[soundName]);
+
+            return true;
+        }
+        else
+        {
+            Debug.Log("soundEffects dictionary does not have key: " + soundName);
+        }
+
+        return false;
+    }
+    public void StopHandEffects()
+    {
+        try
+        {
+            handSource.Stop();
+        }
+        catch (UnassignedReferenceException e)
+        {
+            Debug.LogError("Missing reference to a warning timer.\n" + e.Message);
+        }
+    }
+
+
+
+    public void MuteSoundEffects(bool mute)
 	{
 		try
 		{

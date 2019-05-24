@@ -13,7 +13,10 @@ public class Player : MonoBehaviour
     public Vector3 targetPosition;
 
     //Hands
-    public GameObject hands;
+    public HandAnimations hands;
+
+    //Effects
+    public GameObject navParticles;
 
     //Camera
     public GameObject camera;
@@ -34,11 +37,24 @@ public class Player : MonoBehaviour
                 InputManager.Instance.navEnabled = true;
                 isMoving = false;
                 targetPosition = Vector3.zero;
+
+                //Effects stop
+                navParticles.SetActive(false);
+
+                //Sound
+                //SoundManager.Instance.PlaySurroundEffect("navStop2");
             }
         }
 
         //Hands
-        hands.transform.rotation = camera.transform.rotation;
+        if (!isMoving)
+        {
+            hands.transform.rotation = camera.transform.rotation;
+        }
+
+        //Effects
+        navParticles.transform.rotation = camera.transform.rotation;
+
     }
 
 
@@ -47,6 +63,6 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Init()
     {
-        hands.SetActive(true);
+        hands.gameObject.SetActive(true);
     }
 }

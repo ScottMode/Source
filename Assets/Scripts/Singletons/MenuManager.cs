@@ -14,7 +14,8 @@ public enum ModalState
 public enum ScreenState
 {
 	None,
-    UIMainMenu
+    UIMainMenu,
+    UIIntro
 }
 
 public class MenuManager : Singleton<MenuManager>

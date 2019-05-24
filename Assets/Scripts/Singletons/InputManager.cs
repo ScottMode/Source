@@ -54,6 +54,9 @@ public class InputManager : Singleton<InputManager>
         navPoint = navPointParam;
         Debug.Log("Nav point: " + navPoint);
         navHeld = true;
+
+        //Sound
+        //SoundManager.Instance.PlaySurroundEffect("navStart");
     }
 
     /// <summary>
@@ -63,6 +66,12 @@ public class InputManager : Singleton<InputManager>
     {
         navHeld = false;
         navHeldTime = 0f;
+
+        //Sound
+        if (!GameManager.Instance.player.isMoving)
+        {
+            ///SoundManager.Instance.StopSurroundEffects();
+        }
     }
 
     /// <summary>
